@@ -13,24 +13,21 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.jetTodoApp.MainViewModel
 
 @Composable
-fun EditDialog(
-    isShowDialog: MutableState<Boolean>,
-    viewModel: MainViewModel = hiltViewModel()
-) {
+fun EditDialog(viewModel: MainViewModel = hiltViewModel()) {
     AlertDialog(
-        onDismissRequest = { isShowDialog.value = false },
+        onDismissRequest = { viewModel.isShowDialog = false },
         title = { Text(text = "タスク新規作成") },
         text = {
             Column {
                 Text(text = "タイトル")
                 TextField(
                     value = viewModel.title,
-                    onValueChange = { viewModel.title = it}
+                    onValueChange = { viewModel.title = it }
                 )
                 Text(text = "詳細")
                 TextField(
                     value = viewModel.description,
-                    onValueChange = { viewModel.description = it}
+                    onValueChange = { viewModel.description = it }
                 )
             }
         },
@@ -42,7 +39,7 @@ fun EditDialog(
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
                     modifier = Modifier.width(120.dp),
-                    onClick = { isShowDialog.value = false }
+                    onClick = { viewModel.isShowDialog = false }
                 ) {
                     Text(text = "キャンセル")
                 }
@@ -50,7 +47,7 @@ fun EditDialog(
                 Spacer(modifier = Modifier.width(10.dp))
                 Button(
                     modifier = Modifier.width(120.dp),
-                    onClick = {viewModel.createTask()}
+                    onClick = { viewModel.createTask() }
                 ) {
                     Text(text = "OK")
                 }

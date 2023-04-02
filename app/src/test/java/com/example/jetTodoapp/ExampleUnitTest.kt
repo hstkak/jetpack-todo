@@ -1,4 +1,4 @@
-package com.example.jettodoapp
+package com.example.jetTodoapp
 
 import org.junit.Test
 

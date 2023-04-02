@@ -14,6 +14,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetTodoApp.Task
 
@@ -35,7 +36,7 @@ fun TaskRow(
                 .padding(10.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "タスクタイトル")
+            Text(text = task.title)
             Spacer(modifier = Modifier.weight(1f))
             IconButton(onClick = { onClickDelete(task) }) {
                 Icon(imageVector = Icons.Default.Delete, contentDescription = "削除")

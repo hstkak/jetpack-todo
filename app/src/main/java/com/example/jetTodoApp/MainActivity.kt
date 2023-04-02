@@ -12,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.jetTodoApp.Components.EditDialog
+import com.example.jetTodoApp.Components.TaskList
 import com.example.jetTodoApp.ui.theme.JetTodoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,6 +46,10 @@ fun MainContent(viewModel: MainViewModel = hiltViewModel()) {
         }
     }) {
         val tasks by viewModel.tasks.collectAsState(initial = emptyList())
-
+        TaskList(
+            tasks = tasks,
+            onClickRow = {},
+            onClickDelete = {}
+        )
     }
 }

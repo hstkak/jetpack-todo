@@ -9,7 +9,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.jettodoapp"
+        applicationId "com.example.jetTodoApp"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -68,4 +68,7 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 }

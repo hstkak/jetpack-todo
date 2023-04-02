@@ -1,4 +1,4 @@
-package com.example.jettodoapp
+package com.example.jetTodoApp
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,4 +1,4 @@
-package com.example.jettodoapp.ui.theme
+package com.example.jetTodoApp.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

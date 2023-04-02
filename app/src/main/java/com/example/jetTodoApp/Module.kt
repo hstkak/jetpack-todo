@@ -2,7 +2,6 @@ package com.example.jetTodoApp
 
 import android.content.Context
 import androidx.room.Room
-import com.example.jettodoapp.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

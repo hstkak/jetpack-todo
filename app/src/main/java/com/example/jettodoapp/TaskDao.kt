@@ -1,4 +1,4 @@
-package com.example.jetTodoapp
+package com.example.jettodoapp
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow

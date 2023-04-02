@@ -1,4 +1,4 @@
-package com.example.jetTodoapp
+package com.example.jettodoapp
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

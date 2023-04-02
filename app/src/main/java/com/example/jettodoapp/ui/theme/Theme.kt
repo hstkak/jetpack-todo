@@ -1,4 +1,4 @@
-package com.example.jetTodoapp.ui.theme
+package com.example.jettodoapp.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

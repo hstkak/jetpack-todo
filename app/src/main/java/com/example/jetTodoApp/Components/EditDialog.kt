@@ -16,7 +16,7 @@ import com.example.jetTodoApp.MainViewModel
 fun EditDialog(viewModel: MainViewModel = hiltViewModel()) {
     AlertDialog(
         onDismissRequest = { viewModel.isShowDialog = false },
-        title = { Text(text = "タスク新規作成") },
+        title = { Text(text = if (viewModel.isEditing) "タスク更新" else "タスク新規作成") },
         text = {
             Column {
                 Text(text = "タイトル")
@@ -47,7 +47,14 @@ fun EditDialog(viewModel: MainViewModel = hiltViewModel()) {
                 Spacer(modifier = Modifier.width(10.dp))
                 Button(
                     modifier = Modifier.width(120.dp),
-                    onClick = { viewModel.createTask() }
+                    onClick = {
+                        viewModel.isShowDialog = false
+                        if (viewModel.isEditing){
+                            viewModel.updateTask()
+                        } else {
+                            viewModel.createTask()
+                        }
+                    }
                 ) {
                     Text(text = "OK")
                 }

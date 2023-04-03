@@ -1,5 +1,6 @@
 package com.example.jetTodoApp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -34,14 +35,15 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainContent(viewModel: MainViewModel = hiltViewModel()) {
-    if(viewModel.isShowDialog) {
+    if (viewModel.isShowDialog) {
         EditDialog()
     }
 
     Scaffold(floatingActionButton = {
-        FloatingActionButton(onClick = { viewModel.isShowDialog = true}){
+        FloatingActionButton(onClick = { viewModel.isShowDialog = true }) {
             Icon(imageVector = Icons.Default.Add, contentDescription = "新規作成")
         }
     }) {
@@ -49,7 +51,7 @@ fun MainContent(viewModel: MainViewModel = hiltViewModel()) {
         TaskList(
             tasks = tasks,
             onClickRow = {},
-            onClickDelete = {}
+            onClickDelete = { viewModel.deleteTask(it) }
         )
     }
 }
